@@ -84,17 +84,17 @@ pub enum SegmentPath {
 /// guest environment is set up prior to guest program execution.
 #[derive(Default)]
 pub struct ExecutorEnv<'a> {
-    pub(crate) env_vars: HashMap<String, String>,
-    pub(crate) args: Vec<String>,
-    pub(crate) segment_limit_po2: Option<u32>,
-    pub(crate) session_limit: Option<u64>,
-    pub(crate) posix_io: Rc<RefCell<PosixIo<'a>>>,
-    pub(crate) slice_io: Rc<RefCell<SliceIoTable<'a>>>,
-    pub(crate) input: Vec<u8>,
-    pub(crate) trace: Vec<Rc<RefCell<dyn TraceCallback + 'a>>>,
-    pub(crate) assumptions: Rc<RefCell<Assumptions>>,
-    pub(crate) segment_path: Option<SegmentPath>,
-    pub(crate) pprof_out: Option<PathBuf>,
+    pub env_vars: HashMap<String, String>,
+    pub args: Vec<String>,
+    pub segment_limit_po2: Option<u32>,
+    pub session_limit: Option<u64>,
+    pub posix_io: Rc<RefCell<PosixIo<'a>>>,
+    pub slice_io: Rc<RefCell<SliceIoTable<'a>>>,
+    pub input: Vec<u8>,
+    pub trace: Vec<Rc<RefCell<dyn TraceCallback + 'a>>>,
+    pub assumptions: Rc<RefCell<Assumptions>>,
+    pub segment_path: Option<SegmentPath>,
+    pub pprof_out: Option<PathBuf>,
 }
 
 impl<'a> ExecutorEnv<'a> {
